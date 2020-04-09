@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyCZa-TXKjths_0N7DcscJ_ypKmsxpkVnoQ",
+    authDomain: "telenar-39006.firebaseapp.com",
+    databaseURL: "https://telenar-39006.firebaseio.com",
+    projectId: "telenar-39006",
+    storageBucket: "telenar-39006.appspot.com",
+    messagingSenderId: "757336707411",
+    appId: "1:757336707411:web:416beae60045d2677951a6"
+  }
 };
 
 /*
