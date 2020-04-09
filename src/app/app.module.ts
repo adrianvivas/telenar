@@ -14,7 +14,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 
 //MAterial components
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatFormField } from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
@@ -33,7 +33,7 @@ import { MatInputModule } from '@angular/material/input';
     FlexLayoutModule,
 
     MatToolbarModule,
-    MatFormField,
+    MatFormFieldModule,
     MatInputModule
   ],
   providers: [
