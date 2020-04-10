@@ -27,7 +27,7 @@ export class UserService {
     });
   }
 
-  updateProduct(user: User) {
+  updateUser(user: User) {
     this.userList.update(user.$key, {
       name: user.name,
       lastName: user.lastName,
@@ -38,7 +38,7 @@ export class UserService {
     });
   }
 
-  deleteProduct($key: string) {
+  deleteUser($key: string) {
     this.userList.remove($key);
   }
   

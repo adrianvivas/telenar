@@ -10,6 +10,7 @@
           <input matInput [type]="element.type" class="form-control" #name="ngModel"
             [(ngModel)]="userService.selectedUser.name">
         </mat-form-field>-->
+        <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="userService.selectedUser.$key">
         <mat-form-field>
           <mat-label>Nombre</mat-label>
           <input matInput type="text" class="form-control" name="name" #name="ngModel"

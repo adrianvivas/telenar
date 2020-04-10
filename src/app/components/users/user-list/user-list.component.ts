@@ -27,4 +27,11 @@ export class UserListComponent implements OnInit {
     })
   }
 
+  onEdit(user: User){
+    this.userService.selectedUser = Object.assign({}, user);
+  }
+
+  onDelete($key: string){
+    this.userService.deleteUser($key);
+  }
 }
