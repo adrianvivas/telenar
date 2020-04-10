@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user.service';
+import { NgForm } from '@angular/forms';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-user',
@@ -7,9 +10,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  public form: Array<any> = [
+    {value:"Nombre", type:"text"},
+    {value:"Apellidos", type:"text"},
+    {value:"Ubicación", type:"text"},
+    {value:"Contacto", type:"number"},
+    {value:"Capacidad (Mb)", type:"number"},
+    {value:"Precio", type:"number"}
+  ];
+
+  constructor(public userService: UserService) { }
 
   ngOnInit(): void {
+    this.userService.getUsers();
+    this.resetForm();
   }
 
+  onSubmit(userForm: NgForm){
+    this.userService.insertUser(userForm.value);
+    this.resetForm(userForm);
+  }
+
+  resetForm(userForm?: NgForm){
+    if(userForm != null){
+      userForm.reset();
+      this.userService.selectedUser = new User();
+    }
+  }
 }

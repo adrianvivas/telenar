@@ -1,6 +1,54 @@
-<div class="container">
-    <mat-form-field appearance="fill">
-      <mat-label>Input</mat-label>
-      <input matInput>
-    </mat-form-field>
-  </div>
+<div fxLayout="row wrap" fxLayoutAlign="center center" fxLayputGap="30px" fxLayout.xs="row">
+  <mat-card class="mat-elevation-z5">
+    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+      <mat-card-content>
+        <mat-card-title>
+          Ingresar nuevo usuario
+        </mat-card-title>
+        <!--<mat-form-field *ngFor="let element of form">
+          <mat-label>{{ element.value }}</mat-label>
+          <input matInput [type]="element.type" class="form-control" #name="ngModel"
+            [(ngModel)]="userService.selectedUser.name">
+        </mat-form-field>-->
+        <mat-form-field>
+          <mat-label>Nombre</mat-label>
+          <input matInput type="text" class="form-control" name="name" #name="ngModel"
+            [(ngModel)]="userService.selectedUser.name">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Apellidos</mat-label>
+          <input matInput type="text" class="form-control" name="lastName" #lastName="ngModel"
+            [(ngModel)]="userService.selectedUser.lastName">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Ubicación</mat-label>
+          <input matInput type="text" class="form-control" name="location" #location="ngModel"
+            [(ngModel)]="userService.selectedUser.location">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Contacto</mat-label>
+          <input matInput type="number" class="form-control" name="contact" #contact="ngModel"
+            [(ngModel)]="userService.selectedUser.contact">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Capacidad (Mb)</mat-label>
+          <input matInput type="number" class="form-control" name="capacity" #capacity="ngModel"
+            [(ngModel)]="userService.selectedUser.capacity">
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Precio</mat-label>
+          <input matInput type="number" class="form-control" name="price" #price="ngModel"
+            [(ngModel)]="userService.selectedUser.price">
+        </mat-form-field>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit">
+          <mat-icon>add_box</mat-icon>Agregar
+        </button>
+        <button mat-raised-button color="warn" type="reset" (click)="resetForm(userForm)">
+          <mat-icon>cached</mat-icon>Limpiar
+        </button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>
