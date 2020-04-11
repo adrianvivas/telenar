@@ -1,5 +1,5 @@
 <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayputGap="30px" fxLayout.xs="row">
-  <mat-card class="mat-elevation-z5">
+  <mat-card class="mat-elevation-z3">
     <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
       <mat-card-content>
         <mat-card-title>
@@ -21,10 +21,21 @@
           <input matInput type="text" class="form-control" name="lastName" #lastName="ngModel"
             [(ngModel)]="userService.selectedUser.lastName">
         </mat-form-field>
-        <mat-form-field>
+        <!--<mat-form-field>
           <mat-label>Ubicación</mat-label>
           <input matInput type="text" class="form-control" name="location" #location="ngModel"
             [(ngModel)]="userService.selectedUser.location">
+        </mat-form-field>-->
+        <mat-form-field>
+          <mat-label>Ubicación</mat-label>
+          <mat-select name="location" #location="ngModel"[(ngModel)]="userService.selectedUser.location">
+            <mat-option value="Ancuya">Ancuya</mat-option>
+            <mat-option value="Pasto">Pasto</mat-option>
+            <mat-option value="Peñol">Peñol</mat-option>
+            <mat-option value="Providencia">Providencia</mat-option>
+            <mat-option value="Samaniego">Samaniego</mat-option>
+            <mat-option value="Tambo">Tambo</mat-option>
+          </mat-select>
         </mat-form-field>
         <mat-form-field>
           <mat-label>Contacto</mat-label>

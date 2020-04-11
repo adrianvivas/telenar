@@ -18,7 +18,8 @@ export class UserComponent implements OnInit {
     {value:"Capacidad (Mb)", type:"number"},
     {value:"Precio", type:"number"}
   ];
-
+  
+  public lands = ['Popayán', 'Pasto', 'Samaniego', 'El tambo'];
   constructor(public userService: UserService) { }
 
   ngOnInit(): void {
